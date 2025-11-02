@@ -143,5 +143,5 @@ The dashboard includes pre-loaded sample data:
 
 ## 🔗 Live Demo
 
-[View live deployment]()
+[View live deployment](freelance-dashboard-2s0dfydzg-ualine055-5515s-projects.vercel.app)
 
