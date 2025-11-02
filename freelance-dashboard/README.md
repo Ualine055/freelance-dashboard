@@ -1,75 +1,147 @@
-# React + TypeScript + Vite
+# Freelance Dashboard (React + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive freelance management dashboard built with React, TypeScript, and Context API + useReducer for type-safe global state management.
 
-Currently, two official plugins are available:
+## 🎯 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This dashboard allows freelancers to efficiently manage multiple clients, projects, and payments in one place. It demonstrates strong TypeScript typing, reusable components, and a well-organized state management system.
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Client Management**: View and search clients with contact information and project counts
+- **Project Tracking**: Monitor projects by status (pending, in-progress, completed) and payment status
+- **Payment Recording**: Track all payments with dates and amounts linked to specific projects
+- **Dashboard Statistics**: Quick overview of key metrics (total clients, projects, revenue)
+- **Type-Safe State Management**: Full TypeScript typing with Context API + useReducer
+- **Search Functionality**: Filter clients and projects by name or keyword
+- **Mark Payments**: Easily mark unpaid projects as paid with automatic payment recording
 
-Note: This will impact Vite dev & build performances.
+## 🛠 Technologies Used
 
-## Expanding the ESLint configuration
+- **React** - UI library
+- **TypeScript** - Static typing and type safety
+- **Context API + useReducer** - Global state management
+- **Tailwind CSS** - Styling and responsive design
+- **Next.js** - React framework
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📊 Data Models
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Client
+\`\`\`typescript
+interface Client {
+  id: string;
+  name: string;
+  country: string;
+  email?: string;
+}
+\`\`\`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Project
+\`\`\`typescript
+interface Project {
+  id: string;
+  clientId: string;
+  title: string;
+  budget: number;
+  status: 'pending' | 'in-progress' | 'completed';
+  paymentStatus: 'paid' | 'unpaid';
+}
+\`\`\`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Payment
+\`\`\`typescript
+interface Payment {
+  projectId: string;
+  amount: number;
+  date: string; // ISO format
+}
+\`\`\`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Utility Functions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **getPaymentStats** - Count paid vs unpaid projects
+- **findClientById** - Safely find client by ID with type narrowing
+- **getTotalPayments** - Calculate total payment amounts
+- **filterProjectsByStatus** - Filter projects by completion status
+- **filterProjectsByPaymentStatus** - Filter projects by payment status
+- **searchClients** - Search clients by name or country
+- **searchProjects** - Search projects by title
+- **getProjectWithClient** - Get project with client information
+- **getClientTotalBudget** - Calculate total budget for a client
+- **calculateTotalRevenue** - Calculate revenue from paid projects
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📁 Project Structure
+
+\`\`\`
+src/
+├── app/
+│   ├── page.tsx           # Main page with provider
+│   └── globals.css        # Global styles
+├── components/
+│   ├── DashboardLayout.tsx    # Main layout
+│   ├── DashboardStats.tsx     # Stats cards
+│   ├── ClientList.tsx         # Client listing
+│   ├── ClientCard.tsx         # Client card component
+│   ├── ProjectList.tsx        # Project listing
+│   ├── ProjectCard.tsx        # Project card component
+│   └── PaymentManagement.tsx  # Payment tracking
+├── context/
+│   └── FreelanceContext.tsx   # Context API + useReducer
+├── types/
+│   └── index.ts               # TypeScript interfaces
+└── utils/
+    └── freelance.ts           # Utility functions
+\`\`\`
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 16+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+\`\`\`bash
+git clone https://github.com/yourusername/freelance-dashboard.git
+cd freelance-dashboard
+\`\`\`
+
+2. Install dependencies
+\`\`\`bash
+npm install
+\`\`\`
+
+3. Run the development server
+\`\`\`bash
+npm run dev
+\`\`\`
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser
+
+## 📝 Sample Data
+
+The dashboard includes pre-loaded sample data:
+- 2 Clients (Tech Innovations Inc, Global Design Studio)
+- 2 Projects (E-commerce Platform Redesign, Brand Identity Update)
+- 1 Payment (Brand Identity Update - $3,000)
+
+## 🎨 UI Components
+
+### Reusable Components
+
+1. **ClientCard** - Displays client information with project count and total budget
+2. **ProjectCard** - Shows project details with status indicators and payment status
+3. **DashboardStats** - Displays key metrics in card format
+
+## 💡 TypeScript Highlights
+
+- **Discriminated Unions** - Action types ensure type-safe dispatch
+- **Type Narrowing** - Safe handling of optional properties
+- **Generics** - Flexible, reusable utility functions
+- **Interface Segregation** - Clear prop contracts for components
+
+## 🔗 Live Demo
+
+[View live deployment]()
+
