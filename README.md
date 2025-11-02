@@ -6,6 +6,15 @@ A comprehensive freelance management dashboard built with React, TypeScript, and
 
 This dashboard allows freelancers to efficiently manage multiple clients, projects, and payments in one place. It demonstrates strong TypeScript typing, reusable components, and a well-organized state management system.
 
+
+## 🛠 Technologies Used
+
+- **React** - UI library
+- **TypeScript** - Static typing and type safety
+- **Context API + useReducer** - Global state management
+- **Tailwind CSS** - Styling and responsive design
+- **Next.js** - React framework
+
 ## ✨ Key Features
 
 - **Client Management**: View and search clients with contact information and project counts
@@ -16,13 +25,6 @@ This dashboard allows freelancers to efficiently manage multiple clients, projec
 - **Search Functionality**: Filter clients and projects by name or keyword
 - **Mark Payments**: Easily mark unpaid projects as paid with automatic payment recording
 
-## 🛠 Technologies Used
-
-- **React** - UI library
-- **TypeScript** - Static typing and type safety
-- **Context API + useReducer** - Global state management
-- **Tailwind CSS** - Styling and responsive design
-- **Next.js** - React framework
 
 ## 📊 Data Models
 
@@ -57,19 +59,6 @@ interface Payment {
 }
 \`\`\`
 
-## 🔧 Utility Functions
-
-- **getPaymentStats** - Count paid vs unpaid projects
-- **findClientById** - Safely find client by ID with type narrowing
-- **getTotalPayments** - Calculate total payment amounts
-- **filterProjectsByStatus** - Filter projects by completion status
-- **filterProjectsByPaymentStatus** - Filter projects by payment status
-- **searchClients** - Search clients by name or country
-- **searchProjects** - Search projects by title
-- **getProjectWithClient** - Get project with client information
-- **getClientTotalBudget** - Calculate total budget for a client
-- **calculateTotalRevenue** - Calculate revenue from paid projects
-
 ## 📁 Project Structure
 
 \`\`\`
@@ -103,7 +92,7 @@ src/
 
 1. Clone the repository
 \`\`\`bash
-git clone https://github.com/yourusername/freelance-dashboard.git
+git clone https://github.com/Ualine055/freelance-dashboard.git
 cd freelance-dashboard
 \`\`\`
 
