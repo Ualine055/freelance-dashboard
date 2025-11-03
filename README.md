@@ -6,7 +6,6 @@ A comprehensive freelance management dashboard built with React, TypeScript, and
 
 This dashboard allows freelancers to efficiently manage multiple clients, projects, and payments in one place. It demonstrates strong TypeScript typing, reusable components, and a well-organized state management system.
 
-
 ## 🛠 Technologies Used
 
 - **React** - UI library
@@ -59,13 +58,11 @@ interface Payment {
 }
 \`\`\`
 
+
 ## 📁 Project Structure
 
 \`\`\`
 src/
-├── app/
-│   ├── page.tsx           # Main page with provider
-│   └── globals.css        # Global styles
 ├── components/
 │   ├── DashboardLayout.tsx    # Main layout
 │   ├── DashboardStats.tsx     # Stats cards
@@ -82,31 +79,14 @@ src/
     └── freelance.ts           # Utility functions
 \`\`\`
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 16+
-- npm or yarn
 
 ### Installation
 
-1. Clone the repository
+### Clone the repository
 \`\`\`bash
 git clone https://github.com/Ualine055/freelance-dashboard.git
 cd freelance-dashboard
 \`\`\`
-
-2. Install dependencies
-\`\`\`bash
-npm install
-\`\`\`
-
-3. Run the development server
-\`\`\`bash
-npm run dev
-\`\`\`
-
-4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
 ## 📝 Sample Data
 
@@ -115,21 +95,12 @@ The dashboard includes pre-loaded sample data:
 - 2 Projects (E-commerce Platform Redesign, Brand Identity Update)
 - 1 Payment (Brand Identity Update - $3,000)
 
-## 🎨 UI Components
-
-### Reusable Components
-
-1. **ClientCard** - Displays client information with project count and total budget
-2. **ProjectCard** - Shows project details with status indicators and payment status
-3. **DashboardStats** - Displays key metrics in card format
-
-## 💡 TypeScript Highlights
-
-- **Discriminated Unions** - Action types ensure type-safe dispatch
-- **Type Narrowing** - Safe handling of optional properties
-- **Generics** - Flexible, reusable utility functions
-- **Interface Segregation** - Clear prop contracts for components
 
 ## 🔗 Live Demo
 
-[View live deployment]( )
+[View live deployment](freelance-dashboard-2s0dfydzg-ualine055-5515s-projects.vercel.app)
+
+## Screenshots
+[
+  ![Freelance-dashboard page](../freelance-dashboard/src/assets/screenshoot.PNG)
+]
