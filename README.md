@@ -102,5 +102,5 @@ The dashboard includes pre-loaded sample data:
 
 ## Screenshots
 [
-  ![Freelance-dashboard page](../freelance-dashboard/src/assets/screenshoot.PNG)
+  ![Freelance-dashboard page](../freelance-dashboard/freelance-dashboard/src/assets/screenshoot.PNG)
 ]
