@@ -10,6 +10,7 @@ type TabType = "clients" | "projects" | "payments"
 export default function DashboardLayout() {
   const { state } = useFreelance()
   const [activeTab, setActiveTab] = useState<TabType>("clients")
+  const [openProjectFormSignal, setOpenProjectFormSignal] = useState<number | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
 
   return (
@@ -22,8 +23,19 @@ export default function DashboardLayout() {
               <h1 className="text-3xl font-bold text-white">Freelance Dashboard</h1>
               <p className="mt-1 text-slate-400">Manage your clients, projects, and payments</p>
             </div>
-            <div className="text-sm text-slate-400">
-              Total Projects: <span className="text-emerald-400 font-semibold">{state.projects.length}</span>
+            <div className="flex items-center gap-3">
+              <div className="text-sm text-slate-400">
+                Total Projects: <span className="text-emerald-400 font-semibold">{state.projects.length}</span>
+              </div>
+              <button
+                onClick={() => {
+                  setActiveTab("projects")
+                  setOpenProjectFormSignal(Date.now())
+                }}
+                className="rounded-lg bg-blue-600/20 px-3 py-2 text-sm font-medium text-blue-400 hover:bg-blue-600/30 transition-colors"
+              >
+                Add Project
+              </button>
             </div>
           </div>
         </div>
@@ -64,7 +76,7 @@ export default function DashboardLayout() {
         {/* Tab Content */}
         <div className="space-y-6">
           {activeTab === "clients" && <ClientList searchQuery={searchQuery} />}
-          {activeTab === "projects" && <ProjectList searchQuery={searchQuery} />}
+          {activeTab === "projects" && <ProjectList searchQuery={searchQuery} openFormSignal={openProjectFormSignal ?? undefined} />}
           {activeTab === "payments" && <PaymentManagement />}
         </div>
       </main>

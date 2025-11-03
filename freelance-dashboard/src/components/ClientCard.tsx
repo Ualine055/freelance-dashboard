@@ -8,7 +8,7 @@ interface ClientCardProps {
 
 export default function ClientCard({ client, totalBudget, projectCount }: ClientCardProps) {
   return (
-    <div className="rounded-lg border border-slate-700 bg-gradient-to-br from-slate-800 to-slate-900 p-6 hover:border-slate-600 transition-all">
+    <div className="rounded-lg border border-slate-700 bg-linear-to-br from-slate-800 to-slate-900 p-6 hover:border-slate-600 transition-all">
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-white">{client.name}</h3>

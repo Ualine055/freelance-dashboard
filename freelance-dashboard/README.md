@@ -100,3 +100,7 @@ The dashboard includes pre-loaded sample data:
 
 [View live deployment](freelance-dashboard-2s0dfydzg-ualine055-5515s-projects.vercel.app)
 
+## Screenshots
+[
+  ![Freelance-dashboard page](../freelance-dashboard/src/assets/screenshoot.PNG)
+]
