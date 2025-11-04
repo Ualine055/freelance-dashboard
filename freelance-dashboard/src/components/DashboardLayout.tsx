@@ -14,7 +14,7 @@ export default function DashboardLayout() {
   const [searchQuery, setSearchQuery] = useState("")
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen w-full bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header */}
       <header className="border-b border-slate-700 bg-slate-900/50 backdrop-blur">
         <div className="w-full px-4 py-6 sm:px-6 lg:px-8">
